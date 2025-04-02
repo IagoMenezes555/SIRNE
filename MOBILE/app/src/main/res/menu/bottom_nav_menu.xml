@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_cardapio"
+        android:icon="@drawable/cardapio"
+        android:title="Cardápio" />
+
+    <item
+        android:id="@+id/nav_tarefas"
+        android:icon="@drawable/tarefas"
+        android:title="Tarefas" />
+
+    <item
+        android:id="@+id/nav_notas"
+        android:icon="@drawable/notas"
+        android:title="Notas" />
+
+</menu>

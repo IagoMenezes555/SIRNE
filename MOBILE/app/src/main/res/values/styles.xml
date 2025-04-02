@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.SIRNE" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Barra de Status -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Barra de Navegação (de baixo) -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Colocar ícones claros na barra de status -->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppTheme.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+
+</resources>
