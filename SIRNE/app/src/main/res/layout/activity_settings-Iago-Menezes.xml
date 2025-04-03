@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF6600"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:gravity="end">
+
+        <!-- Botão de voltar -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/voltar"
+            android:contentDescription="Voltar"
+            android:layout_margin="8dp"
+            android:layout_gravity="start|center_vertical"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhaijaan"
+                android:gravity="center"
+                android:text="CONFIGURAÇÕES"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Horários -->
+    <TextView
+        android:id="@+id/text_horarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horários do Refeitório"
+        android:gravity="center"
+        android:fontFamily="@font/baloo_bhaijaan"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/lanche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lanche: 10h ás 10h30min"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/text_horarios"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/almoco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Almoço: 12h ás 13h"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/lanche"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/lanche2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lanche: 15h30min ás 16h"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/almoco"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/creditos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créditos"
+        android:fontFamily="@font/baloo_bhaijaan"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/lanche2"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="16sp"/>
+
+    <!-- Link do instagram (Onrange) -->
+    <TextView
+        android:id="@+id/onrange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/creditos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Onrange"
+        android:textColor="#004CFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Link do instagram (Davi Barbosa) -->
+    <TextView
+        android:id="@+id/davi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/onrange"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Davi Barbosa"
+        android:textColor="#004CFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Link do instagram (Érick da Silva) -->
+    <TextView
+        android:id="@+id/erick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/davi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Érick da Silva"
+        android:textColor="#004CFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Link do instagram (Gustavo Lima) -->
+    <TextView
+        android:id="@+id/gustavo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/erick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Gustavo Lima"
+        android:textColor="#004CFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Link do instagram (Iago Menezes) -->
+    <TextView
+        android:id="@+id/iago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gustavo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Iago Menezes"
+        android:textColor="#004CFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Link do instagram (Kiam Mota) -->
+    <TextView
+        android:id="@+id/kiam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iago"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Kiam Mota"
+        android:textColor="#004CFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
