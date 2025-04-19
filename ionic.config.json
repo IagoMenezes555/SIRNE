@@ -1,0 +1,7 @@
+{
+  "name": "SIRNE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
