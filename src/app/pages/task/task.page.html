@@ -10,8 +10,13 @@
         @for (task of tasks(); track $index) {
           @if (!task.check) {
             <div class="task">
-              <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, true)" />
-              <span class="task-name">{{ task.name }}</span>
+              <div class="container-check-name">
+                <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, true)" />
+                <span class="task-name">{{ task.name }}</span>
+              </div>
+              <div class="container-delete" (click)="deleteTask(task.id)">
+                <span class="material-symbols-outlined">delete</span>
+              </div>
             </div>
           }
         }
@@ -26,8 +31,13 @@
         @for (task of tasks(); track $index) {
           @if (task.check) {
             <div class="task">
-              <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, false)" [checked]="true" />
-              <span class="task-name">{{ task.name }}</span>
+              <div class="container-check-name">
+                <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, false)" [checked]="true" />
+                <span class="task-name">{{ task.name }}</span>
+              </div>
+              <div class="container-delete" (click)="deleteTask(task.id)">
+                <span class="material-symbols-outlined">delete</span>
+              </div>
             </div>
           }
         }

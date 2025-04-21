@@ -1,7 +1,7 @@
 import { Component, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonButton, ModalController, IonCheckbox } from '@ionic/angular/standalone';
+import { IonContent, IonButton, ModalController, IonCheckbox, AlertController } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../../components/header/header.component";
 import { TaskService } from 'src/app/services/task.service';
 import { TaskFormModalComponent } from 'src/app/components/task-form-modal/task-form-modal.component';
@@ -26,7 +26,8 @@ export class TaskPage implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private alertCrtl: AlertController
   ) { }
 
   ngOnInit() {
@@ -50,5 +51,26 @@ export class TaskPage implements OnInit {
 
   public checkTask(taskId: string, status: boolean) {
     this.taskService.checkTask(taskId, status);
+  }
+
+  public async deleteTask(taskId: string) {
+    const alertref = await this.alertCrtl.create({
+      header: 'Confirmar Deletação',
+      message: 'Tem certeza que deseja deletar está tarefa?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Deletar',
+          handler: () => {
+            this.taskService.removeTask(taskId);
+          }
+        }
+      ]
+    });
+    
+    await alertref.present();
   }
 }

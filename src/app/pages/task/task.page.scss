@@ -32,15 +32,18 @@ ion-content {
                 .task {
                     display: flex;
                     align-items: center;
-                    gap: .6rem;
+                    justify-content: space-between;
                     color: var(--text-color);
                     background: var(--bg-color-300);
 
-                    .task-name {
-                        font-size: 1.2rem;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                    .container-check-name {
+                        display: flex;
+                        align-items: center;
+                        gap: .6rem;
+
+                        .task-name {
+                            font-size: 1.2rem;
+                        }
                     }
                 }
             }
