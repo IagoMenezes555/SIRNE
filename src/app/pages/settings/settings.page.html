@@ -1,13 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>settings</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <span class="material-symbols-outlined">arrow_back_ios</span>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Olá! {{ settingsService.auth().name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="logout()">
+        <span>Sair</span>
+        <span class="material-symbols-outlined">logout</span>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">settings</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="toggle-theme" >
+    <span>Modo escuro</span>
+    <ion-toggle class="toggle" [(ngModel)]="isDarkMode" (ionChange)="toggleTheme()" justify="space-between"></ion-toggle>
+  </div>
+
+  <div class="contributors">
+    <span>Desenvolvedores</span>
+    <a target="_blank" href="https://www.instagram.com/eierickdasilva">Érick da Silva</a>
+    <a target="_blank" href="https://www.instagram.com/iagomenezes37">Iago Menezes</a>
+    <a target="_blank" href="https://www.instagram.com/kiammota">Kiam Mota</a>
+    <span>Designer</span>
+    <a target="_blank" href="https://www.instagram.com/gustavolima_sem_o_t">Gustavo Lima</a>
+    <span>Contribuidores</span>
+    <a target="_blank" href="https://www.instagram.com/davi_barbosa3009">Davi Barbosa</a>
+    <span>Powered by</span>
+    <a target="_blank" href="https://www.instagram.com/onrangedev">Onrangedev</a>
+  </div>
 </ion-content>
