@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancelModal()">
+        <span class="material-symbols-outlined">arrow_back_ios</span>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>ADICIONAR TAREFA</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirmModal()">
+        <span class="material-symbols-outlined">check</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form taskForm="ngForm">
+    <ion-item class="ion-no-padding">
+      <ion-input type="text" fill="solid" label="Tarefa" placeholder="Nova terefa" labelPlacement="floating" required [(ngModel)]="taskSel.name" name="name"/>
+    </ion-item>
+
+    <ion-item class="ion-no-padding">
+      <ion-input type="text" fill="solid" label="Descrição" placeholder="Descreva a tarefa" labelPlacement="floating" [(ngModel)]="taskSel.description" name="description"/>
+    </ion-item>
+
+    <ion-item class="ion-no-padding">
+      <ion-input type="date" fill="solid" label="Data final" labelPlacement="floating" [(ngModel)]="taskSel.end" name="end"/>
+    </ion-item>
+  </form>  
+</ion-content>

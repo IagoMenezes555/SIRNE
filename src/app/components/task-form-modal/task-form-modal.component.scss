@@ -1,0 +1,35 @@
+ion-header {
+    ion-toolbar {
+        --background: var(--primary-color);
+        color: #ffffff;
+
+        ion-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        ion-buttons {
+            ion-button {
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+ion-content {
+    --background: var(--bg-color);    
+    
+    form {
+        background-color: var(--bg-color-300);
+        padding: 1rem;
+        border-radius: var(--radius-10);
+        border: 1px solid var(--gray);
+
+        ion-item {
+            color: var(--text-color);
+            --background: var(--bg-color-300);
+        }
+    }
+}
