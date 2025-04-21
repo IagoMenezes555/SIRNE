@@ -38,13 +38,23 @@ ion-content {
                     color: var(--text-color);
                     background: var(--bg-color-300);
 
-                    .container-check-name {
+                    .container-check-name-description {
                         display: flex;
                         align-items: center;
                         gap: .6rem;
 
-                        .task-name {
-                            font-size: 1.2rem;
+                        .task-container-name-description {
+                            display: flex;
+                            flex-direction: column;
+                            
+                            .task-name {
+                                font-size: 1.2rem;
+                            }
+                            
+                            .task-description {
+                                font-size: .9rem;
+                                color: gray;
+                            }
                         }
                     }
                 }
