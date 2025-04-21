@@ -1,7 +1,9 @@
 ion-content {
+    overflow: none;
     --background: var(--primary-color);
     
     .container {
+        overflow: auto;
         color: var(--text-color);
         border-radius: var(--radius-30) var(--radius-30) 0 0;
         height: 100%;
