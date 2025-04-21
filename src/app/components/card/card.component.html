@@ -1,3 +1,15 @@
-<p>
-  card works!
-</p>
+<span class="day">{{ menu().day | uppercase }}</span>
+
+<div class="snack">
+  <span class="description">MERENDA</span>
+  <span>{{ snack.name }}</span>
+</div>
+
+<div class="lunch">
+  <span class="description">ALMOÇO</span>
+  <span>{{ lunch.name }}</span>
+</div>
+
+<div class="btns">
+  <span class="material-symbols-outlined" (click)="openNutritionalInfoDialog()">info</span>
+</div>
