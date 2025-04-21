@@ -1,6 +1,6 @@
 import { UpperCasePipe } from '@angular/common';
 import { Component, input, OnInit } from '@angular/core';
-import { IonToolbar, IonTitle, IonHeader, IonButtons, IonButton, ModalController } from "@ionic/angular/standalone";
+import { IonToolbar, IonTitle, IonHeader, IonButtons, IonButton, ModalController, IonAvatar } from "@ionic/angular/standalone";
 import { SettingsPage } from 'src/app/pages/settings/settings.page';
 
 @Component({
@@ -8,6 +8,7 @@ import { SettingsPage } from 'src/app/pages/settings/settings.page';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   imports: [
+    IonAvatar, 
     IonButton,
     IonButtons,
     IonHeader, 
