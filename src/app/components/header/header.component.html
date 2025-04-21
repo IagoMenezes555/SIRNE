@@ -1,3 +1,10 @@
-<p>
-  header works!
-</p>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title (click)="playKiam()">{{ title() | uppercase }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="openSettings()">
+        <img alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
