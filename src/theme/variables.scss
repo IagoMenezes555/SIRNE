@@ -2,6 +2,7 @@
 // http://ionicframework.com/docs/theming/
 
 :root {
+    --text-color: #000000;
     --gray: #74777F;
     --bg-color: #FAFAFB;
     --bg-color-0: #FFFFFF;
@@ -22,6 +23,7 @@
 }
 
 :root.app-dark {
+    --text-color: #ffffff;
     --gray: #74777F;
     --bg-color: #222226; 
     --bg-color-0: #000000;
