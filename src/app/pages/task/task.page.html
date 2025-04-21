@@ -1,4 +1,41 @@
 <app-header title="Tarefas" />
 
 <ion-content>
+  <div class="container">
+    <div class="tasks">
+      <div class="task-header">
+        <span>Tarefas</span>
+      </div>
+      <div class="task-main">
+        @for (task of tasks(); track $index) {
+          @if (!task.check) {
+            <div class="task">
+              <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, true)" />
+              <span class="task-name">{{ task.name }}</span>
+            </div>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="completed">
+      <div class="task-header">
+        <span>Completas</span>
+      </div>
+      <div class="task-main">
+        @for (task of tasks(); track $index) {
+          @if (task.check) {
+            <div class="task">
+              <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, false)" [checked]="true" />
+              <span class="task-name">{{ task.name }}</span>
+            </div>
+          }
+        }
+      </div>
+    </div>
+    
+    <ion-button class="btn-add" (click)="openTaskFormModal()">
+      <span class="material-symbols-outlined">add</span>
+    </ion-button>
+  </div>
 </ion-content>

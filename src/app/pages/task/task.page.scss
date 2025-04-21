@@ -1,3 +1,57 @@
 ion-content {
-    --background: var(--bg-color);
+    --background: var(--primary-color);
+    
+    .container {
+        color: var(--text-color);
+        border-radius: var(--radius-30) var(--radius-30) 0 0;
+        height: 100%;
+        background-color: var(--bg-color);
+        padding-top: 1rem;
+        
+        .tasks, .completed {
+            background-color: var(--bg-color-300);
+            margin: auto;
+            width: 90%;
+            border-radius: var(--radius-10);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            
+            .task-header {
+                span {
+                    margin: 0;
+                    font-weight: 500;
+                }
+            }
+
+            .task-main {
+                display: flex;
+                margin-top: 1rem;
+                flex-direction: column;
+                gap: .6rem;
+
+                .task {
+                    display: flex;
+                    align-items: center;
+                    gap: .6rem;
+                    color: var(--text-color);
+                    background: var(--bg-color-300);
+
+                    .task-name {
+                        font-size: 1.2rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+        
+        .btn-add {
+            position: fixed;
+            top: 100%;
+            left: 100%;
+            color: #ffffff;
+            transform: translate(-120%, -120%);
+        }
+    }
 }
