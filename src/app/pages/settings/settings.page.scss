@@ -30,6 +30,8 @@ ion-content {
         justify-content: space-between;
         font-weight: 600;
         color: var(--text-color);
+        border: .1rem solid var(--border-color-10);
+        box-shadow: .1rem .1rem 1rem .05rem var(--shadow-color);
     }
 
     .contributors {
@@ -37,12 +39,13 @@ ion-content {
         padding: 1rem;
         margin-top: 1rem;
         background-color: var(--bg-color-300);
-
         border-radius: var(--radius-30);
         display: flex;
         align-items: center;
         gap: .5rem;
         flex-direction: column;
+        border: .1rem solid var(--border-color-10);
+        box-shadow: .1rem .1rem 1rem .05rem var(--shadow-color);
 
         span {
             margin: .5rem;
