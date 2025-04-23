@@ -15,6 +15,9 @@
                 <div class="task-container-name-description">
                   <span class="task-name">{{ task.name }}</span>
                   <span class="task-description">{{ task.description }}</span>
+                  @if (task.end) {
+                    <span class="task-date">{{ task.end | date }}</span>
+                  }
                 </div>
                 </div>
               <div class="container-delete" (click)="deleteTask(task.id)">

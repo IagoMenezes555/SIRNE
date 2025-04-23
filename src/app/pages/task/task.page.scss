@@ -73,7 +73,12 @@ ion-content {
                             
                             .task-description {
                                 font-size: .9rem;
+                                color: var(--gray);
+                            }
+
+                            .task-date {
                                 color: gray;
+                                font-weight: 500;
                             }
                         }
                     }
