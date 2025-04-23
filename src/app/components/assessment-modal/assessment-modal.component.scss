@@ -9,6 +9,7 @@ ion-content {
         text-align: center;
         padding: .2rem;
         margin-bottom: 1rem;
+        color: var(--text-color);
     }
 
     h3 {
@@ -18,9 +19,11 @@ ion-content {
         margin-bottom: 1rem;
         text-align: center;
         padding: .2rem;
+        color: var(--text-color);
     }
 
     .container-assessment {
+        color: var(--text-color);
         display: flex;
         justify-content: center;
         background-color: var(--bg-color-300);
@@ -46,5 +49,5 @@ ion-content {
 }
 
 .assessmented {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
