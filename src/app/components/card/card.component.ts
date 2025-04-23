@@ -19,12 +19,9 @@ import { AssessmentService } from 'src/app/services/assessment.service';
 })
 export class CardComponent implements OnInit {
   public menu = input.required<Menu>();
-  public snacks = input.required<Meal[]>();
-  public lunches = input.required<Meal[]>();
   
   public snack: Meal = { assessment: 0, calories: 0, carbohydrates: 0, glucose: 0, id: '', lactose: false, name: '', objectId: '' };
   public lunch: Meal = { assessment: 0, calories: 0, carbohydrates: 0, glucose: 0, id: '', lactose: false, name: '', objectId: '' };
-  
 
   constructor(
     private menuService: MenuService,
@@ -36,9 +33,17 @@ export class CardComponent implements OnInit {
     this.loadMeal();
   }
   
-  public loadMeal() {    
-    this.snack = this.menuService.getMealId(this.menu().idSnack)!;
-    this.lunch = this.menuService.getMealId(this.menu().idLunch)!;
+  public loadMeal() {
+    const snack = this.menuService.getMealId(this.menu().idSnack);
+    const lunch = this.menuService.getMealId(this.menu().idLunch);
+
+    console.log(snack);
+    console.log(lunch);
+    
+    
+
+    if (snack) this.snack = snack;
+    if (lunch) this.lunch = lunch;
   }
 
   public async openAssessmentDialog(menu: Menu) {
