@@ -1,7 +1,7 @@
-import { Component, computed, OnInit } from '@angular/core';
+import { Component, computed, effect, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonButton, ModalController, IonCheckbox, AlertController } from '@ionic/angular/standalone';
+import { IonContent, IonButton, ModalController, IonCheckbox, AlertController, IonSearchbar } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../../components/header/header.component";
 import { TaskService } from 'src/app/services/task.service';
 import { TaskFormModalComponent } from 'src/app/components/task-form-modal/task-form-modal.component';
@@ -18,18 +18,25 @@ import { Task } from 'src/app/models/task';
     IonContent,
     CommonModule,
     FormsModule,
-    HeaderComponent
+    HeaderComponent,
+    IonSearchbar
   ]
 })
 export class TaskPage implements OnInit {
   public tasks = computed(() => this.taskService.tasks());
+  public filteredTasks: Task[] = [];
   public taskCompletedListOpen: boolean = false;
+  public searchTerm: string = '';
 
   constructor(
     private taskService: TaskService,
     private modalCtrl: ModalController,
     private alertCrtl: AlertController
-  ) { }
+  ) {
+    effect(() => {
+      this.search();
+    });
+  }
 
   ngOnInit() {
   }
@@ -73,6 +80,10 @@ export class TaskPage implements OnInit {
     });
     
     await alertref.present();
+  }
+
+  public search() {
+    this.filteredTasks = [ ...this.tasks().filter((task) => task.name.toUpperCase().includes(this.searchTerm.toUpperCase())) ];
   }
 
   public toggleOpenCompletedTask() {

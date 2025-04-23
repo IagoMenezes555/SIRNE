@@ -8,12 +8,17 @@ ion-content {
         border-radius: var(--radius-30) var(--radius-30) 0 0;
         height: 100%;
         background-color: var(--bg-color);
-        padding-top: 1rem;
+        padding: 1rem;
+
+        ion-searchbar {
+            color: var(--text-color);
+            --background: var(--bg-color-500);
+            margin-bottom: 1rem;
+            padding: 0;
+        }
         
         .tasks, .completed {
             background-color: var(--bg-color-300);
-            margin: auto;
-            width: 90%;
             border-radius: var(--radius-10);
             padding: 1rem;
             margin-bottom: 1rem;
