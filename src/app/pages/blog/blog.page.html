@@ -1,0 +1,17 @@
+<app-header title="Blog" />
+
+<ion-content scrollY="false">
+  <div class="container">
+    <ion-searchbar [(ngModel)]="searchTerm" [debounce]="300" (ionInput)="search()" placeholder="Pesquisar post..." />
+
+    @for (post of filteredPosts; track $index) {
+      <div class="blog" (click)="openPost(post)">
+        <h2 class="blog-title">{{ post.title }}</h2>
+        <span class="blog-description">{{ post.description }}</span>
+        <div class="blog-date">{{ post.date | date }}</div>
+      </div>
+    } @empty {
+      <p class="empty">Nenhum post encontrado :/</p>
+    }
+  </div>
+</ion-content>

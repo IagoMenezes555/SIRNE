@@ -1,0 +1,65 @@
+ion-content {
+    --background: var(--primary-color);
+    overflow: hidden;
+
+    .container {
+        overflow: auto;
+        background-color: var(--bg-color);
+        height: 100%;
+        width: 100%;
+        border-radius: var(--radius-30) var(--radius-30) 0 0;
+        padding: 1rem;
+        gap: 1rem;
+
+        ion-searchbar {
+            color: var(--text-color);
+            --background: var(--bg-color-500);
+            margin-bottom: 1rem;
+            padding: 0;
+        }
+
+        .blog {
+            color: var(--text-color);
+            background-color: var(--bg-color-300);
+            border-radius: var(--radius-10);
+            margin: auto;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: .1rem solid var(--border-color-10);
+            box-shadow: .1rem .1rem 1rem .05rem var(--shadow-color);
+            cursor: pointer;
+
+            h2 {
+                font-size: 1.2rem;
+                margin: 0;
+                font-weight: 600;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-bottom: .5rem;
+            }
+
+            .blog-description {
+                color: var(--gray);
+            }
+
+            .blog-date {
+                color: gray;
+                margin-top: 1rem;
+            }
+        }
+
+        .empty {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            font-weight: 600;
+            text-align: center;
+            color: gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
