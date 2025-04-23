@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SIRNE</string>
+    <string name="title_activity_main">SIRNE</string>
+    <string name="package_name">io.onrange.sirne</string>
+    <string name="custom_url_scheme">io.onrange.sirne</string>
+</resources>
