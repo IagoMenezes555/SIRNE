@@ -37,11 +37,6 @@ export class CardComponent implements OnInit {
     const snack = this.menuService.getMealId(this.menu().idSnack);
     const lunch = this.menuService.getMealId(this.menu().idLunch);
 
-    console.log(snack);
-    console.log(lunch);
-    
-    
-
     if (snack) this.snack = snack;
     if (lunch) this.lunch = lunch;
   }
