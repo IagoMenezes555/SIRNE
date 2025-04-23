@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonAvatar, IonItem, IonButton, ModalController } from '@ionic/angular/standalone';
+import { IonContent, IonAvatar, IonItem, IonButton, ModalController, IonInput } from '@ionic/angular/standalone';
 import { MenuService } from 'src/app/services/menu.service';
 import { ProfileModalComponent } from 'src/app/components/profile-modal/profile-modal.component';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,12 +10,12 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonButton, IonItem, IonAvatar, 
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    CommonModule,
+  imports: [
+    IonButton,
+    IonContent, 
+    IonInput,
+    IonAvatar,
+    IonItem,
     FormsModule
   ]
 })
@@ -38,7 +37,7 @@ export class LoginPage {
     await modal.present();
   }
 
-  public login() {
+  public login() {    
     this.auth.setLogin({ appid: this.appid, appkey: this.appkey, name: this.name });
     this.menuService.loadBackendless();
   }
