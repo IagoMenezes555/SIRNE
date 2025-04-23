@@ -32,7 +32,7 @@
     <div class="completed">
       <div class="task-header" (click)="toggleOpenCompletedTask()">
         <span>Completas</span>
-        <span [class.rotate-up]="taskCompletedListOpen" [class.rotate-down]="!taskCompletedListOpen" class="material-symbols-outlined">arrow_back_ios</span>
+        <span [class.rotate-up]="taskCompletedListOpen" [class.rotate-down]="!taskCompletedListOpen" class="material-symbols-outlined">keyboard_arrow_down</span>
       </div>
       @if (taskCompletedListOpen) {
         <div class="task-main">
