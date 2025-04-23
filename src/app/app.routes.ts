@@ -13,7 +13,16 @@ export const routes: Routes = [
       {
         path: 'task',
         loadComponent: () => import('./pages/task/task.page').then((m) => m.TaskPage),
-      }
+      },
+      {
+        path: 'blog',
+        loadComponent: () => import('./pages/blog/blog.page').then((m) => m.BlogPage),
+      },
+      {
+        path: '',
+        redirectTo: 'menu',
+        pathMatch: 'full',
+      },
     ]
   },
   {
