@@ -71,7 +71,6 @@ export class MenuService {
     }).subscribe({
       next: (res) => {
         const menu = res as Menu[];
-        console.log(menu);
 
         if (this.errorReq) {
           this.errorReq.set(false);
@@ -146,12 +145,7 @@ export class MenuService {
     });
   }
 
-  public getMealId(id: string): Meal | undefined {
-    console.log(id);
-
-    console.log(this.snacks());
-    console.log(this.lunches());;
-    
+  public getMealId(id: string): Meal | undefined {    
     return this.snacks().find((s) => s.id === id) || this.lunches().find((l) => l.id === id);
   }
 
