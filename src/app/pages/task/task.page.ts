@@ -23,6 +23,7 @@ import { Task } from 'src/app/models/task';
 })
 export class TaskPage implements OnInit {
   public tasks = computed(() => this.taskService.tasks());
+  public taskCompletedListOpen: boolean = false;
 
   constructor(
     private taskService: TaskService,
@@ -72,5 +73,9 @@ export class TaskPage implements OnInit {
     });
     
     await alertref.present();
+  }
+
+  public toggleOpenCompletedTask() {
+    this.taskCompletedListOpen = !this.taskCompletedListOpen;
   }
 }
