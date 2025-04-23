@@ -47,6 +47,7 @@ export class AuthService {
       ],
     });
   
+    this.storageService.remove('auth');
     await alert.present();
   }
 
