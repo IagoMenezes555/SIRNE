@@ -12,6 +12,8 @@
 :root {
     --text-color: #000000;
 
+    --gray: #333333;
+
     --bg-color: #FAFAFB;
     --bg-color-0: #FFFFFF;
     --bg-color-100: #F5F5F7;
@@ -37,6 +39,8 @@
 
 :root.app-dark {
     --text-color: #ffffff;
+
+    --gray: #bbbbbb;
 
     --bg-color: #222226; 
     --bg-color-0: #000000;
