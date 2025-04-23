@@ -1,0 +1,27 @@
+<ion-content scrollY="false">
+  <h2>AVALIAÇÃO</h2>
+
+  <h3>Merenda</h3>
+  <div class="container-assessment">
+    <div>
+      <span class="material-symbols-outlined" [ngClass]="{'assessmented': snackAssessment === 'deslike'}" (click)="assess('deslike', 'snack')">thumb_down</span>
+      <span class="text" [ngClass]="{'assessmented': snackAssessment === 'deslike'}">Não gostei</span>
+    </div>
+    <div>
+      <span class="material-symbols-outlined" [ngClass]="{'assessmented': snackAssessment === 'like'}" (click)="assess('like', 'snack')">thumb_up</span>
+      <span class="text" [ngClass]="{'assessmented': snackAssessment === 'like'}">Gostei</span>
+    </div>
+  </div>
+
+  <h3>Almoço</h3>
+  <div class="container-assessment">
+    <div>
+      <span class="material-symbols-outlined" [ngClass]="{'assessmented': lunchAssessment === 'deslike'}" (click)="assess('deslike', 'lunch')">thumb_down</span>
+      <span class="text" [ngClass]="{'assessmented': lunchAssessment === 'deslike'}">Não gostei</span>
+    </div>
+    <div>
+      <span class="material-symbols-outlined" [ngClass]="{'assessmented': lunchAssessment === 'like'}" (click)="assess('like', 'lunch')">thumb_up</span>
+      <span class="text" [ngClass]="{'assessmented': lunchAssessment === 'like'}">Gostei</span>
+    </div>
+  </div>
+</ion-content>

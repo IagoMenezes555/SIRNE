@@ -5,6 +5,8 @@ import { UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MenuService } from 'src/app/services/menu.service';
 import { NutritionalInformationModalComponent } from '../nutritional-information-modal/nutritional-information-modal.component';
+import { AssessmentModalComponent } from '../assessment-modal/assessment-modal.component';
+import { AssessmentService } from 'src/app/services/assessment.service';
 
 @Component({
   selector: 'app-card',
@@ -26,7 +28,8 @@ export class CardComponent implements OnInit {
 
   constructor(
     private menuService: MenuService,
-    private modalController: ModalController
+    private assessmentService: AssessmentService,
+    private modalCtrl: ModalController,
   ) {}
   
   ngOnInit() {
@@ -38,8 +41,28 @@ export class CardComponent implements OnInit {
     this.lunch = this.menuService.getMealId(this.menu().idLunch)!;
   }
 
+  public async openAssessmentDialog(menu: Menu) {
+    const modalref = await this.modalCtrl.create({
+      component: AssessmentModalComponent,
+      componentProps: {
+        menu: menu,
+        snackAssessment: this.assessmentService.getAssessment(menu, 'snack'),
+        lunchAssessment: this.assessmentService.getAssessment(menu, 'lunch'),
+      },
+      cssClass: 'assessment-modal'
+    });
+
+    modalref.present();
+
+    modalref.onDidDismiss().then((data) => {
+      if (data.data) {
+        this.assessmentService.assess(data.data);
+      }
+    });
+  }
+
   public async openNutritionalInfoDialog() {
-    const modalref = await this.modalController.create({
+    const modalref = await this.modalCtrl.create({
       component: NutritionalInformationModalComponent,
       componentProps: {
         snack: this.snack,

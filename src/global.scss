@@ -78,6 +78,14 @@ input[type=number] {
     --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
 }
 
+.assessment-modal {
+    --width: 15rem;
+    --height: 22rem;
+    --border-radius: var(--radius-10);
+    --border: .1rem solid var(--gray);
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
 ion-toggle {
     --track-background: #cccccc !important;
 }

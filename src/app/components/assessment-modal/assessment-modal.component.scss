@@ -1,0 +1,50 @@
+ion-content {
+    --background: var(--bg-color-100);
+
+    h2 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        padding: .2rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin: .5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        padding: .2rem;
+    }
+
+    .container-assessment {
+        display: flex;
+        justify-content: center;
+        background-color: var(--bg-color-300);
+        padding: .5rem 1rem;
+        margin: auto;
+        margin-bottom: 1rem;
+        border-radius: var(--radius-10);
+        width: 90%;
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .material-symbols-outlined {
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    }
+}
+
+.assessmented {
+    color: var(--primary-color);
+}
