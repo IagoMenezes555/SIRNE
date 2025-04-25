@@ -1,35 +1,37 @@
 <ion-content scroll-y="false">
-  <div class="snack">
+  <div class="container">
     <h2>NUTRIÇÃO</h2>
 
-    <h3>Merenda</h3>
-    <span>CALORIAS: {{ snack.calories }}</span>
-    <span>GLICOSE: {{ snack.glucose }}</span>
-    <span>CARBOIDRATOS: {{ snack.carbohydrates }}</span>
+    <div class="snack">
+      <h3>Merenda</h3>
+      <span>CALORIAS: {{ snack.calories }}</span>
+      <span>GLICOSE: {{ snack.glucose }}</span>
+      <span>CARBOIDRATOS: {{ snack.carbohydrates }}</span>
 
-    @if (snack.lactose) {
-      <div class="lactose">LACTOSE</div>
-    }
+      @if (snack.lactose) {
+        <div class="lactose">LACTOSE</div>
+      }
 
-    <div class="assessment">
-      <span class="material-symbols-outlined">star</span>
-      <span>{{ snack.assessment }}/5</span>
+      <div class="assessment">
+        <span class="material-symbols-outlined">star</span>
+        <span>{{ snack.assessment }}/5</span>
+      </div>
     </div>
-  </div>
 
-  <div class="lunch">
-    <h3>Almoço</h3>
-    <span>CALORIAS: {{ lunch.calories }}</span>
-    <span>GLICOSE: {{ lunch.glucose }}</span>
-    <span>CARBOIDRATOS: {{ lunch.carbohydrates }}</span>
+    <div class="lunch">
+      <h3>Almoço</h3>
+      <span>CALORIAS: {{ lunch.calories }}</span>
+      <span>GLICOSE: {{ lunch.glucose }}</span>
+      <span>CARBOIDRATOS: {{ lunch.carbohydrates }}</span>
 
-    @if (lunch.lactose) {
-      <div class="lactose">LACTOSE</div>
-    }
+      @if (lunch.lactose) {
+        <div class="lactose">LACTOSE</div>
+      }
 
-    <div class="assessment">
-      <span class="material-symbols-outlined">star</span>
-      <span>{{ lunch.assessment }}/5</span>
+      <div class="assessment">
+        <span class="material-symbols-outlined">star</span>
+        <span>{{ lunch.assessment }}/5</span>
+      </div>
     </div>
   </div>
 </ion-content>
