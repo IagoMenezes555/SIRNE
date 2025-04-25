@@ -6,7 +6,9 @@ import { Task } from '../models/task';
   providedIn: 'root'
 })
 export class TaskService {
+  private allTasks = signal<Task[]>([]);
   public tasks = signal<Task[]>([]);
+  public completedTasks = signal<Task[]>([]);
 
   constructor(
     private storageService: StorageService,
@@ -15,22 +17,32 @@ export class TaskService {
   }
 
   public loadTasks() {
-    const tasksSaved = this.storageService.get('tasks');
+    const tasksSaved = this.storageService.get('tasks') as Task[];
 
     if (tasksSaved) {
-      this.tasks.set(tasksSaved);
+      this.allTasks.set(tasksSaved);
+      this.loadCompletedTasks();
+      this.loadIncompleteTasks();
     }
   }
 
-  public addTask(task: Task) {    
+  private loadCompletedTasks() {
+    this.completedTasks.set(this.allTasks().filter((task) => task.check));
+  }
+
+  private loadIncompleteTasks() {
+    this.tasks.set(this.allTasks().filter((task) => !task.check))
+  }
+
+  public addTask(task: Task) {  
     task.id = this.makeID();
 
-    this.tasks.update((tasks) => [ task, ...tasks ]);
+    this.allTasks.update((tasks) => [ task, ...tasks ]);
     this.saveTasks();
   }
 
   public removeTask(taskId: string) {
-    this.tasks.update((tasks) => {
+    this.allTasks.update((tasks) => {
       return tasks.filter((task) => task.id !== taskId)
     });
 
@@ -38,7 +50,7 @@ export class TaskService {
   }
 
   public checkTask(taskId: string, status: boolean) {
-    this.tasks.update((tasks) => {
+    this.allTasks.update((tasks) => {
       tasks.forEach((task) => {
         if (task.id === taskId) {
           task.check = status;
@@ -52,7 +64,9 @@ export class TaskService {
   }
 
   private saveTasks() {
-    this.storageService.save('tasks', this.tasks());
+    this.storageService.save('tasks', this.allTasks());
+    this.loadCompletedTasks();
+    this.loadIncompleteTasks();
   }
 
   private makeID(): string {

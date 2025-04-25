@@ -24,6 +24,7 @@ import { Task } from 'src/app/models/task';
 })
 export class TaskPage implements OnInit {
   public tasks = computed(() => this.taskService.tasks());
+  public completedTasks = computed(() => this.taskService.completedTasks());
   public filteredTasks: Task[] = [];
   public taskCompletedListOpen: boolean = false;
   public searchTerm: string = '';
