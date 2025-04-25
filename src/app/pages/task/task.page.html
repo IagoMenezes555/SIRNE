@@ -10,23 +10,21 @@
       </div>
       <div class="task-main">
         @for (task of filteredTasks; track $index) {
-          @if (!task.check) {
-            <div class="task">
-              <div class="container-check-name-description">
-                <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, true)" />
-                <div class="task-container-name-description">
-                  <span class="task-name">{{ task.name }}</span>
-                  <span class="task-description">{{ task.description }}</span>
-                  @if (task.end) {
-                    <span class="task-date">{{ task.end | date }}</span>
-                  }
-                </div>
-                </div>
-              <div class="container-delete" (click)="deleteTask(task.id)">
-                <span class="material-symbols-outlined">delete</span>
+          <div class="task">
+            <div class="container-check-name-description">
+              <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, true)" />
+              <div class="task-container-name-description">
+                <span class="task-name">{{ task.name }}</span>
+                <span class="task-description">{{ task.description }}</span>
+                @if (task.end) {
+                  <span class="task-date">{{ task.end | date }}</span>
+                }
               </div>
+              </div>
+            <div class="container-delete" (click)="deleteTask(task.id)">
+              <span class="material-symbols-outlined">delete</span>
             </div>
-          }
+          </div>
         }
       </div>
     </div>
@@ -38,20 +36,18 @@
       </div>
       @if (taskCompletedListOpen) {
         <div class="task-main">
-          @for (task of tasks(); track $index) {
-            @if (task.check) {
-              <div class="task">
-                <div class="container-check-name-description">
-                  <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, false)" [checked]="true" />
-                  <div class="task-container-name-description">
-                    <span class="task-name">{{ task.name }}</span>
-                  </div>
-                </div>
-                <div class="container-delete" (click)="deleteTask(task.id)">
-                  <span class="material-symbols-outlined">delete</span>
+          @for (task of completedTasks(); track $index) {
+            <div class="task">
+              <div class="container-check-name-description">
+                <ion-checkbox class="task-check" (ionChange)="checkTask(task.id, false)" [checked]="true" />
+                <div class="task-container-name-description">
+                  <span class="task-name">{{ task.name }}</span>
                 </div>
               </div>
-            }
+              <div class="container-delete" (click)="deleteTask(task.id)">
+                <span class="material-symbols-outlined">delete</span>
+              </div>
+            </div>
           }
         </div>
       }
