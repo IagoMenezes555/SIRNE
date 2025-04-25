@@ -7,6 +7,9 @@
     <div class="tasks">
       <div class="task-header">
         <span>Tarefas</span>
+        @if (tasks().length > 0) {
+          {{ tasks().length }}
+        }
       </div>
       <div class="task-main">
         @for (task of filteredTasks; track $index) {
