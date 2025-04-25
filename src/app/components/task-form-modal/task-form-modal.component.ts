@@ -19,7 +19,7 @@ import { Task } from 'src/app/models/task';
 export class TaskFormModalComponent  implements OnInit {
   @Input() task!: Task;
 
-  public taskSel: Task = { name: '', check: false, end: new Date(), id: '', description: '', inital: new Date }
+  public taskSel: Task = { name: '', check: false, end: null, id: '', description: '', inital: new Date }
 
   constructor(
     private modalCtrl: ModalController

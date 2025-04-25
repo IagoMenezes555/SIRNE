@@ -4,5 +4,5 @@ export interface Task {
     id: string,
     check: boolean,
     inital: Date,
-    end: Date,
+    end: Date | null,
 }
