@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { StatusBar, Style } from '@capacitor/status-bar';
 
+StatusBar.setOverlaysWebView({ overlay: false });
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
