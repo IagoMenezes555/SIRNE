@@ -1,8 +1,8 @@
-<span class="day">{{ menu().day | uppercase }}</span>
+<span class="day" [class]="{'today': today}">{{ menu().day | uppercase }}</span>
 
 <div class="snack">
   <span class="description">MERENDA</span>
-  <span class="name">{{ snack.name }}</span>
+  <span class="name">{{ today }}</span>
 </div>
 
 <div class="lunch">

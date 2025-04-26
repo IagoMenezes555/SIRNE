@@ -7,7 +7,6 @@ import { MenuService } from 'src/app/services/menu.service';
 import { NutritionalInformationModalComponent } from '../nutritional-information-modal/nutritional-information-modal.component';
 import { AssessmentModalComponent } from '../assessment-modal/assessment-modal.component';
 import { AssessmentService } from 'src/app/services/assessment.service';
-
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -19,6 +18,7 @@ import { AssessmentService } from 'src/app/services/assessment.service';
 })
 export class CardComponent implements OnInit {
   public menu = input.required<Menu>();
+  public today: boolean = false;
   
   public snack: Meal = { assessment: 0, calories: 0, carbohydrates: 0, glucose: 0, id: '', lactose: false, name: '', objectId: '' };
   public lunch: Meal = { assessment: 0, calories: 0, carbohydrates: 0, glucose: 0, id: '', lactose: false, name: '', objectId: '' };
@@ -31,6 +31,7 @@ export class CardComponent implements OnInit {
   
   ngOnInit() {
     this.loadMeal();
+    this.checkDate();
   }
   
   public loadMeal() {
@@ -39,6 +40,14 @@ export class CardComponent implements OnInit {
 
     if (snack) this.snack = snack;
     if (lunch) this.lunch = lunch;
+  }
+
+  private checkDate() {    
+    const today = new Date();
+    const dayWeek = today.getDay();
+
+    const days = ['segunda', 'terça', 'quarta', 'quinta', 'sexta'];
+    this.today = days[dayWeek] === this.menu().day;
   }
 
   public async openAssessmentDialog(menu: Menu) {
