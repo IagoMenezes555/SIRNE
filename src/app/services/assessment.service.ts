@@ -72,7 +72,7 @@ export class AssessmentService {
   private changeAssessment(assessment: Assessment) {
     this.assessments.update((assessments) => {
       assessments.forEach((a) => {
-        if (a.menu.id === assessment.menu.id && a.type === a.type) {
+        if (a.menu.id === assessment.menu.id && a.type === assessment.type) {
           a.assessment = assessment.assessment;
         }
       });

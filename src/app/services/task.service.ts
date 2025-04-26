@@ -49,6 +49,15 @@ export class TaskService {
     this.saveTasks();
   }
 
+  public deleteAllCompletedTasks() {
+    this.allTasks.update((tasks) => {
+      return tasks.filter((task) => !task.check);
+    });
+
+    this.saveTasks();
+    this.loadCompletedTasks();
+  }
+
   public checkTask(taskId: string, status: boolean) {
     this.allTasks.update((tasks) => {
       tasks.forEach((task) => {
