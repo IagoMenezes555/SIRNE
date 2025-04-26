@@ -38,7 +38,7 @@ ion-content {
             display: flex;
             flex-direction: column;
             margin: 1rem;
-            border-radius: var(--radius-30);
+            border-radius: var(--radius-10);
             align-items: center;
             gap: .35rem;
             padding: .2rem;
@@ -56,7 +56,7 @@ ion-content {
             .lactose {
                 background: var(--pg-color-500);
                 padding: .2rem 1rem;
-                border-radius: var(--radius-10);
+                border-radius: var(--radius-05);
                 color: #ffffff;
                 font-weight: 700;
                 margin: .35rem;

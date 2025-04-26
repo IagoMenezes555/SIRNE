@@ -7,7 +7,7 @@ ion-content {
         background-color: var(--bg-color);
         height: 100%;
         width: 100%;
-        border-radius: var(--radius-30) var(--radius-30) 0 0;
+        border-radius: var(--radius-10) var(--radius-10) 0 0;
         padding: 1rem;
         gap: 1rem;
 
@@ -21,7 +21,7 @@ ion-content {
         .blog {
             color: var(--text-color);
             background-color: var(--bg-color-300);
-            border-radius: var(--radius-10);
+            border-radius: var(--radius-05);
             margin: auto;
             margin-bottom: 1.5rem;
             padding: 1rem;

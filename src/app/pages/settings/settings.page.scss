@@ -24,7 +24,7 @@ ion-content {
     .toggle-theme {
         padding: 1rem;
         background-color: var(--bg-color-300);
-        border-radius: var(--radius-30);
+        border-radius: var(--radius-10);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -39,7 +39,7 @@ ion-content {
         padding: 1rem;
         margin-top: 1rem;
         background-color: var(--bg-color-300);
-        border-radius: var(--radius-30);
+        border-radius: var(--radius-10);
         display: flex;
         align-items: center;
         gap: .5rem;
