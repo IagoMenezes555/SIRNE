@@ -93,6 +93,10 @@ input[type=number] {
     --border: .1rem solid var(--gray);
 }
 
+.btn-danger {
+    color: #dd0000 !important;
+}
+
 ion-toggle {
     --track-background: #cccccc !important;
 }
