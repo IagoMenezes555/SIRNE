@@ -3,6 +3,10 @@ ion-header {
         --background: var(--primary-color);
         color: #ffffff;
 
+        ion-spinner {
+            margin-left: .5rem;
+        }
+
         ion-title {
             font-size: 1.25rem;
             font-weight: 800;
