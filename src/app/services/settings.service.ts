@@ -14,10 +14,10 @@ export class SettingsService {
     this.getSetting();
   }
 
-  private getSetting() {
-    const auth = this.storageService.get('auth');
+  private async getSetting() {
+    const auth = await this.storageService.get<Auth>('auth');
 
-    if (auth) {
+    if (auth !== null) {
       this.auth.set(auth);
     }
   }

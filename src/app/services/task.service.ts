@@ -16,10 +16,10 @@ export class TaskService {
     this.loadTasks();
   }
 
-  public loadTasks() {
-    const tasksSaved = this.storageService.get('tasks') as Task[];
+  public async loadTasks() {
+    const tasksSaved = await this.storageService.get<Task[]>('tasks');
 
-    if (tasksSaved) {
+    if (tasksSaved !== null) {
       this.allTasks.set(tasksSaved);
       this.loadCompletedTasks();
       this.loadIncompleteTasks();

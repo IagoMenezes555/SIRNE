@@ -28,14 +28,14 @@ export class MenuService {
     this.loadBackendless();
   }
 
-  public loadLocal() {
-    const savedMenu = this.storageService.get('menu');
-    const savedDatabase = this.storageService.get('database');
+  public async loadLocal() {
+    const savedMenu = await this.storageService.get<Menu[]>('menu');
+    const savedDatabase = await this.storageService.get<MenuDatabase[]>('database');
 
-    if (savedDatabase) {
+    if (savedDatabase !== null) {
       this.filterDatabase(savedDatabase);
 
-      if (savedMenu) {
+      if (savedMenu !== null) {
         this.menu.set(savedMenu);
       }
     }

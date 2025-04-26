@@ -15,10 +15,10 @@ export class AssessmentService {
     this.loadAssessments();
   }
 
-  private loadAssessments() {
-    const assessmentsSaved = this.storageService.get('assessments');
+  private async loadAssessments() {
+    const assessmentsSaved = await this.storageService.get<Assessment[]>('assessments');
 
-    if (assessmentsSaved) {
+    if (assessmentsSaved !== null) {
       this.assessments.set(assessmentsSaved);
     }
   }
