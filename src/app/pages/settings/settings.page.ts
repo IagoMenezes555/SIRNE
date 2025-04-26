@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, computed, OnDestroy } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, ModalController, IonButtons, Platform, IonToggle } from '@ionic/angular/standalone';
 import { caretBack, chevronBackOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 export class SettingsPage implements OnDestroy {
   private backButtonSubscription: Subscription;
   public isDarkMode: boolean = false;
+  public name = computed(() => this.settingsService.auth().name);
 
   constructor(
     private authService: AuthService,
