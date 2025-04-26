@@ -34,7 +34,7 @@ ion-content {
         box-shadow: .1rem .1rem 1rem .05rem var(--shadow-color);
     }
 
-    .contributors {
+    .contributors, .schedule {
         color: var(--text-color);
         padding: 1rem;
         margin-top: 1rem;
@@ -47,7 +47,7 @@ ion-content {
         border: .1rem solid var(--border-color-10);
         box-shadow: .1rem .1rem 1rem .05rem var(--shadow-color);
 
-        span {
+        .label {
             margin: .5rem;
             font-weight: 600;
         }
