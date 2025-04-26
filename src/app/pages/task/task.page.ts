@@ -83,6 +83,28 @@ export class TaskPage implements OnInit {
     await alertref.present();
   }
 
+  public async deleteAllCompletedTasks() {
+    const alertref = await this.alertCrtl.create({
+      header: 'Confirmar Deletação',
+      message: 'Tem certeza que deseja DELETAR TODAS AS TAREFAS COMPLETAS?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Deletar',
+          cssClass: 'btn-danger',
+          handler: () => {
+            this.taskService.deleteAllCompletedTasks();
+          },
+        },
+      ]
+    });
+
+    alertref.present();
+  }
+
   public search() {
     this.filteredTasks = [ ...this.tasks().filter((task) => task.name.toUpperCase().includes(this.searchTerm.toUpperCase())) ];
   }
